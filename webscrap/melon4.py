@@ -3,16 +3,16 @@ from bs4 import BeautifulSoup
 
 
 class Melon4(object):
-    url = 'https://www.melon.com/chart/index.htm?dayTime='
-    headers = {'User-Agent': 'Mozilla/5.0'}
-    class_name = []
+    url = 'https://www.melon.com/chart/index.htm?dayTime='  # str
+    headers = {'User-Agent': 'Mozilla/5.0'}  # dictionary(컬그레이스)
+    class_name = []  # list(스퀘어)
 
     def set_url(self, time):
-        self.url = requests.get(f'{self.url}{time}',headers= self.headers).text
+        self.url = requests.get(f'{self.url}{time}', headers= self.headers).text
 
     def get_url(self):
-        soup = BeautifulSoup(self.url,'lxml')
-        ls = soup.find_all("div",{"class" : self.class_name[0]}) #함수안에 들어갈땐 ""
+        soup = BeautifulSoup(self.url, 'lxml')
+        ls = soup.find_all("div", {"class" : self.class_name[0]})  #  함수안에 들어갈땐 ""
         count = 0
         print("제목")
         for i in ls:
@@ -26,9 +26,10 @@ class Melon4(object):
             count += 1
             print(f'RANK{count}')
             print(i.find("a").text)
+
     @staticmethod
     def main():
-        melon4 =Melon4()
+        melon4 = Melon4()
         while 1:
             menu = int(input('0:EXIT 1:INPUT 2:READ'))
             if menu == 0:
