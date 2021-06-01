@@ -7,7 +7,7 @@ if __name__ == '__main__':
 
     while 1:
         menu = input('0:EXIT 1: Data Visualization 2: Modeling 3: Machine leaning 4: Machine release')
-
+        controller = Controller()
         if menu == '0':
             break
 
@@ -19,8 +19,8 @@ if __name__ == '__main__':
             test.draw_embarked()
 
         elif menu == '2':
-            controller = Controller()
-            controller.preprocess('train.csv','test.csv')
+
+            controller.preprocess('train.csv', 'test.csv')
 
         elif menu == '3':
             pass
