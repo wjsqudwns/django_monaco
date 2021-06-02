@@ -8,8 +8,8 @@ rc('font', family=font_manager.FontProperties(fname='C:/Windows/Fonts/H2GTRE.ttf
 
 
 class Plot(object):
-    dataset: object = Dataset()  # ()는 생성자의 의미 즉 dataset은 인스턴스
-    service: object = Service()  # 공유객체
+    dataset = Dataset()  # ()는 생성자의 의미 즉 dataset은 인스턴스
+    service = Service()  # 공유객체
 
     #  생성자
     def __init__(self, train):  # 타이타닉의 init -> plot에 init에 값을 넣어줌 -> 서비스 뉴모델메소드에서 반환해서 엔티티 대입 -> 다시 inin에서 test 메소드 호출 값 출력

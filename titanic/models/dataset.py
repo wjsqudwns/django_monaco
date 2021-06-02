@@ -1,13 +1,13 @@
 from dataclasses import dataclass
 
 
-@dataclass()  # encapsulation dataset에만 붙는것
+@dataclass()  # encapsulation dataset에만 붙는것 클래스이름
 class Dataset(object):  # structuring 구조화 :간결성
 
     context: str
     fname: str
-    train: str
-    text: str
+    train: object
+    text: object
     id: str  # 값이 숫자로 보여도 외부에서 넘어오는 값이나 내부에서 입력하는 값은 다 str 형식
     label: str
 
@@ -24,13 +24,13 @@ class Dataset(object):  # structuring 구조화 :간결성
     def fname(self, fname): self._fname = fname
 
     @property
-    def train(self) -> str: return self._train
+    def train(self) -> object: return self._train
 
     @train.setter
     def train(self, train): self._train = train
 
     @property
-    def text(self) -> str: return self._text
+    def text(self) -> object: return self._text
 
     @text.setter
     def text(self, text): self._text = text

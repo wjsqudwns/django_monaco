@@ -23,10 +23,12 @@ if __name__ == '__main__':
             controller.preprocess('train.csv', 'test.csv')
 
         elif menu == '3':
-            pass
+            df = controller.modeling('train.csv', 'test.csv')
+            controller.learning(df)
 
         elif menu == '4':
-            pass
+            controller.submit('train.csv', 'test.csv')
+
         else:
             continue
 
